@@ -7,22 +7,87 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <style>
-    body {
-      text-align: center;
-      background-color: #f2f2f2;
-    }
-    canvas {
-      background-color: #f5deb3;
-      border: 10px solid #5c4033;
-      border-radius: 10px;
-      display: block;
-      margin: 20px auto;
-    }
-    #scoreBoard {
-      font-size: 18px;
-      font-weight: bold;
-      
-    }
+   body {
+  text-align: center;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* 🎯 Canvas responsive */
+canvas {
+  background-color: #f5deb3;
+  border: 10px solid #5c4033;
+  border-radius: 10px;
+  display: block;
+  margin: 20px auto;
+  max-width: 95vw;
+  height: auto;
+}
+
+/* Scoreboard */
+#scoreBoard {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* 📱 Mobile Controls */
+#controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+  flex-wrap: wrap;
+}
+
+.control-btn {
+  background-color: #5c4033;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.control-btn:hover {
+  background-color: #7a523f;
+}
+
+/* 📱 Responsive adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 22px;
+  }
+
+  #scoreBoard {
+    font-size: 16px;
+  }
+
+  .control-btn {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+
+  canvas {
+    width: 95vw;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .control-btn {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+}
+
   </style>
 </head>
 <body>

@@ -17,6 +17,7 @@ let striker = {
   power: 8
 };
 
+
 // 🎱 Create Coins
 let coins = [];
 function createCoins() {

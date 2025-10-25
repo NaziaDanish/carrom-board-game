@@ -26,13 +26,19 @@
 </head>
 <body>
 
-  <h1>🎯 Carrom Board Game</h1>
+    <h1>🎯 Carrom Board Game</h1>
   <div id="scoreBoard">
     Player 1: <span id="p1">0</span> | Player 2: <span id="p2">0</span>
   </div>
 
   <canvas id="board" width="600" height="600"></canvas>
 
+  <!-- 📱 Mobile Buttons -->
+  <div id="controls">
+    <button class="control-btn" id="leftBtn">⬅️ Left</button>
+    <button class="control-btn" id="hitBtn">🎯 Hit</button>
+    <button class="control-btn" id="rightBtn">➡️ Right</button>
+  </div>
   <script src="game.js"></script>
 </body>
 </html>

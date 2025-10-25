@@ -256,5 +256,43 @@
       }
     };
 
+    // 📱 Touch Controls for Mobile
+let isTouching = false;
+
+canvas.addEventListener("touchstart", (e) => {
+  e.preventDefault();
+  let touch = e.touches[0];
+  let rect = canvas.getBoundingClientRect();
+  let tx = touch.clientX - rect.left;
+  let ty = touch.clientY - rect.top;
+
+  // Striker angle set according to touch position
+  striker.angle = Math.atan2(ty - striker.y, tx - striker.x);
+
+  // Start move on tap
+  striker.moving = true;
+  striker.dx = Math.cos(striker.angle) * striker.power;
+  striker.dy = Math.sin(striker.angle) * striker.power;
+  isTouching = true;
+});
+
+canvas.addEventListener("touchmove", (e) => {
+  e.preventDefault();
+  if (!isTouching) return;
+  let touch = e.touches[0];
+  let rect = canvas.getBoundingClientRect();
+  let tx = touch.clientX - rect.left;
+  let ty = touch.clientY - rect.top;
+  
+  // Move striker horizontally with finger
+  striker.x = tx;
+  striker.angle = Math.atan2(ty - striker.y, tx - striker.x);
+});
+
+canvas.addEventListener("touchend", () => {
+  isTouching = false;
+});
+
+
     drawBoard();
     update();
